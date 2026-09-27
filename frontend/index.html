@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LegalEase</title>
+<style>
+body{font-family:sans-serif;background:#0d1117;color:white;text-align:center;padding:20px}
+.box{background:#161b22;padding:20px;border-radius:12px;max-width:450px;margin:30px auto}
+input,select,button{width:90%;padding:12px;margin:10px;border-radius:8px;border:none}
+button{background:#238636;color:white;font-weight:bold}
+#out{background:black;padding:10px;border-radius:8px;text-align:left;margin-top:15px;white-space:pre-wrap}
+</style>
+</head>
+<body>
+<h1>⚖️ LegalEase</h1>
+<p>AI Legal Document Generator</p>
+<div class="box">
+<select id="type">
+<option>Rental Agreement</option>
+<option>NDA</option>
+<option>Employment Letter</option>
+</select>
+<input id="name" placeholder="Party Name">
+<input id="det" placeholder="Enter Details">
+<button onclick="gen()">Generate</button>
+<div id="out">Your document will appear here</div>
+</div>
+<script>
+function gen(){
+let t=document.getElementById('type').value;
+let n=document.getElementById('name').value;
+let d=document.getElementById('det').value;
+document.getElementById('out').innerText="Generating "+t+" for "+n+"\n\nDetails: "+d+"\n\n[AI Content Here]";
+}
+</script>
+</body>
+</html>
